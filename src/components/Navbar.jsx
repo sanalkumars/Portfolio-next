@@ -47,6 +47,29 @@ const Navbar = () => {
     },
   };
   
+const listVariants = {
+  closed:{
+    x:"100vw"
+  },
+  opened:{
+    x:0,
+    transition:{
+      when: "beforeChildren" ,
+      staggerChildren: 0.2, // increasing will add more delay in displaying the list
+    }
+  }
+}
+
+const listItemVariants ={
+  closed:{
+    x:-10,
+    opacity:0,
+  },
+  opened:{
+    x:0,
+    opacity:1,
+  }
+}
 
 
 
@@ -107,13 +130,21 @@ const Navbar = () => {
           ></motion.div>
         </button>
         {open && (
-              <div className='absolute top-3 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl'>
+              <motion.div
+               variants={listVariants}
+                initial="closed" 
+                animate="opened" 
+                className='absolute top-3 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-40'>
+             
               { links.map((link) =>(
-                <Link href={link.url} key={link.title}>
-                  {link.title}
-                </Link>
+                <motion.div variants={listItemVariants} className='' key={link.title}> 
+                   <Link href={link.url} >
+                    {link.title}
+                  </Link>
+                </motion.div>
+
               ))}
-        </div>
+        </motion.div>
         )}
       
       </div>
