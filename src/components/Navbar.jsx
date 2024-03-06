@@ -92,13 +92,13 @@ const listItemVariants ={
       {/* logo part end */}
       {/* social media links */}
       <div className=' hidden md:flex gap-4 w-1/3'>
-          <Link href="/">
+          <Link href="https://github.com/sanalkumars">
               <Image src='/github.png' alt='github' width={24} height={24} />
           </Link>
-          <Link href="/">
+          <Link href="www.linkedin.com/in/sanal-kumar-s-645275281">
               <Image src='/linkedin.png' alt='linkedin' width={24} height={24} />
           </Link>
-          <Link href="/">
+          <Link href="https://www.instagram.com/sanal.s_02/?next=%2F&hl=en">
               <Image src='/instagram.png' alt='instagram' width={24} height={24} />
           </Link>
           <Link href="/">
